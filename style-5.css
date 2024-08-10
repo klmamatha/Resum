@@ -1,0 +1,161 @@
+/* Reset some default styles */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  border-top: 10px solid #1098ad;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+
+  /* Adjust width of sidebar and content area */
+  grid-template-areas: "nav main";
+  height: 100vh;
+  /* Full viewport height */
+}
+
+.main {
+  grid-area: main;
+  background: #dda3a8;
+  color: #0e0202e8;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: auto;
+  /* Add scroll if content overflows */
+}
+
+.nav {
+  grid-area: nav;
+  background: #d7d6e4;
+  color: #080101;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  /* Add scroll if content overflows */
+}
+
+.nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav__content {
+  margin-top: 20px;
+}
+
+.nav__menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.nav__menu-item {
+  margin: 0;
+  padding: 10px;
+  position: relative;
+}
+
+.nav__menu-item a {
+  color: #130253;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav__submenu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #725c97;
+  border-top: 2px solid #d68d8d;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  left: 70%;
+  width: 100px;
+  z-index: 10;
+}
+
+.nav__submenu-item {
+  padding: 10px;
+}
+
+.nav__menu-item:hover>.nav__submenu {
+  display: block;
+}
+
+.nav__submenu-item a {
+  color: #0e0d0d;
+  text-decoration: none;
+}
+
+.nav__submenu-item:hover>a {
+  border: 2px solid transparent;
+  padding: 2.5px;
+  border-radius: 5px;
+}
+
+.nav__menu-item a:hover {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  /* Ensures main content respects z-index layering */
+  z-index: 1;
+  /* Keeps main content below dropdown */
+}
+
+h1 {
+  margin-top: 0;
+  color: #493b61;
+}
+
+p {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
